@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
         body: Container(
           //กำหนดสีพื่นหลังของ Container
           color: Colors.amber,
+          //constraints กำหนดความกว้างของ Container
+          constraints : BoxConstraints.expand(width: 200),
           // padding เป็นตัวกำหนดให้ข้อความห่างจากขอบจอทุกด้าน
           padding : EdgeInsets.all(20),
           // margin เป็นตัวกำหนดให้ Container จากขอบจอทุกด้าน
