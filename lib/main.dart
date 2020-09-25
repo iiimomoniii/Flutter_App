@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
           //กำหนดสีพื่นหลังของ Container
           //color: Colors.amber,
           //constraints กำหนดความกว้างของ Container
-          constraints : BoxConstraints.expand(),
+          constraints: BoxConstraints.expand(width:150),
           // padding เป็นตัวกำหนดให้ข้อความห่างจากขอบจอทุกด้าน
-          padding : EdgeInsets.all(20),
+          padding: EdgeInsets.all(20),
           // margin เป็นตัวกำหนดให้ Container จากขอบจอทุกด้าน
           margin: EdgeInsets.all(20),
           //alignment เป็นกำหนดตำเเหน่งของข้อความ
@@ -32,7 +32,23 @@ class MyApp extends StatelessWidget {
           //alignment: Alignment.topCenter,
           //decoration ตกเเต่ง Container
           //ถ้าจะกำหนดสีให้กับ Container ให้ ประกาศสีภายใต้ BoxDecoration
-          decoration: BoxDecoration(color: Colors.green),
+          decoration: BoxDecoration(
+            //สี Container
+            //color: Colors.green,
+            //เส้น Container
+            border: Border.all(
+                //ขนาดเส้น
+                width: 15,
+                //สีเส้น
+                color: Colors.black,
+                //ลักษณะเส้น
+                style: BorderStyle.solid,
+            ),
+            //กำหนดความโค้งของ BoxDecoration
+            borderRadius: BorderRadius.circular(20),
+            //กำหนดไล่เฉดสีพื้นหลังจากซ้ายไปขวา สีเเดง => สีเหลือง
+            gradient: LinearGradient(colors: [Colors.red, Colors.yellow])
+          ),
           //ถ้ามีข้อความเกิดขึ้นข้อความ พื่นหลังของ Container (color: Colors) จะมีการเปลี่ยนเเปลงตามขอบเขตของ ข้อความนั้น
           child: Text("codemobiles"),
         ),
