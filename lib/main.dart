@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
         body: Container(
           //กำหนดสีพื่นหลังของ Container
           color: Colors.amber,
+          // padding เป็นตัวกำหนดให้ข้อความห่างจากขอบจอทุกด้าน
+          padding : EdgeInsets.all(20),
           //alignment เป็นกำหนดตำเเหน่งของข้อความ
           //Alignment Alignment.topCenter ชิดจอด้านบน
           alignment: Alignment.topCenter,
