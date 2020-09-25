@@ -15,6 +15,8 @@ class MyApp extends StatelessWidget {
         ),
       //สร้าง ROW ขึ้นมา 1 Row
       body: Row(
+        //กำหนดให้ข้อมูล ที่อยู่ใน ROW ทั้งหมดอยู่ตรงกลาง
+        mainAxisAlignment: MainAxisAlignment.center,
         //ภายใต้ ROW จะมี ข้อมูล Logo , Codemobiles , CM Devs
         children: <Widget>[FlutterLogo(), Text("Codemobiles"), Text("CM Devs")],
       ),
