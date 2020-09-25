@@ -21,6 +21,9 @@ class MyApp extends StatelessWidget {
         body: Container(
           //กำหนดสีพื่นหลังของ Container
           color: Colors.amber,
+          //alignment เป็นกำหนดตำเเหน่งของข้อความ
+          //FractionalOffset.center ให้ข้อความไปอยู่ตรงกลางจอ
+          alignment: FractionalOffset.center,
           //ถ้ามีข้อความเกิดขึ้นข้อความ พื่นหลังของ Container (color: Colors) จะมีการเปลี่ยนเเปลงตามขอบเขตของ ข้อความนั้น
           child: Text("codemobiles"),
         ),
