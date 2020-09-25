@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget {
         body: Container(
           //กำหนดสีพื่นหลังของ Container
           color: Colors.amber,
+          //ถ้ามีข้อความเกิดขึ้นข้อความ พื่นหลังของ Container (color: Colors) จะมีการเปลี่ยนเเปลงตามขอบเขตของ ข้อความนั้น
+          child: Text("codemobiles"),
         ),
       ),
     );
