@@ -46,8 +46,12 @@ class MyApp extends StatelessWidget {
             ),
             //กำหนดความโค้งของ BoxDecoration
             borderRadius: BorderRadius.circular(20),
-            //กำหนดไล่เฉดสีพื้นหลังจากซ้ายไปขวา สีเเดง => สีเหลือง
-            gradient: LinearGradient(colors: [Colors.red, Colors.yellow])
+            //กำหนดไล่เฉด
+            gradient: LinearGradient(
+              colors: [Colors.red, Colors.yellow],
+              //ไล่สีีพื้นหลังจากซบนลงล่าง สีเเดง => สีเหลือง
+              begin: Alignment.topCenter
+            )
           ),
           //ถ้ามีข้อความเกิดขึ้นข้อความ พื่นหลังของ Container (color: Colors) จะมีการเปลี่ยนเเปลงตามขอบเขตของ ข้อความนั้น
           child: Text("codemobiles"),
