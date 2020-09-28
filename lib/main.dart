@@ -13,57 +13,39 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("CM Layout"),
         ),
-//        //สร้าง ROW ขึ้นมา 1 Row
-//        body: Row(
-//          //กำหนดให้ข้อมูล ที่อยู่ใน ROW ทั้งหมดอยู่ตรงกลาง
-//          //MainAxisAlignment
-//          // (.center) อยู่ตรงกลางจอในเเนวเเกน x ,
-//          // (.spaceEvenly) อยู่ตรงกลางจอในเเนวเเกน x ถ้ามีมากว่า 1 คำให้มีพื้ที่ระหว่างคำ
-//          // (.spaceAround) อยู่ตรงกลางจอในเเนวเเกน x ถ้ามีมากว่า 1 คำให้มีพื้ที่ระหว่างคำ โดยเเบ่งพื้นที่ว่างเท่าๆกัน
-//          // (.spaceBetween) ให้คำชิดจอ
-//          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//          // CrossAxisAlignment
-//          // (.start) อยู่ชิดด้านบนในเเนวเเกน y
-//          // (.end) อยู่ชิดจอด้านล่างในเเนวเเกน y
-//          // (.baseline) ให้ตัวหนังสือที่อยู่ row เดียวกัน ตัวอักษรให้ชิบขอบเหมือนกัน กรณีที่มีตัวหนังสือกขนาดไม่เท่ากัน มี properties เพิ่มเติม textBaseline
-//          crossAxisAlignment: CrossAxisAlignment.baseline,
-//          // (.alphabetic) ด้านล่างตัวหนังสือจะชิดขอบล่างเหมือนกัน กรณีที่มีตัวหนังสือกขนาดไม่เท่ากัน
-//          textBaseline: TextBaseline.alphabetic,
-//          // TextDirection
-//          // (.rtl) เรียงคำจากซ้ายไปขวา
-//          textDirection: TextDirection.rtl,
-//          //ภายใต้ ROW จะมี ข้อมูล Logo , Codemobiles , CM Devs
-//          children: <Widget>[
-//            FlutterLogo(),
-//            Text(
-//              "Codemobiles",
-//              style: TextStyle(fontSize: 30),
-//            ),
-//            Text("CM Devs", style: TextStyle(fontSize: 20))
-//          ],
-//        ),
-        //สร้าง Column ขึ้นมา 1 Column
-        body: Column(
-          // MainAxisAlignment
-          // (.start) อยู่ชิดด้านบนในเเนวเเกน y
-          // (.end) อยู่ชิดด้านล่างในเเนวเเกน y
-          mainAxisAlignment: MainAxisAlignment.start,
-          // CrossAxisAlignment
-          // (.start) จะชิดขอบซ้ายของ Column
-          // (.end) จะชิดขอบขวาของ Column
-          crossAxisAlignment: CrossAxisAlignment.end,
-          //MainAxisSize
-          // (.min) จะเเสดงเนื้อหาโดยกินพื้นที่ให้น้อยที่สุด
-          // (.max) จะเเสดงเนื้อหาเต็มพื่้นที่ที่เหลืออยู่
-          mainAxisSize: MainAxisSize.min,
-          //ภายใต้ Column จะมี ข้อมูล Logo , Codemobiles , CM Devs ที่จะถูกจัดอยู่ใน column เดียวกัน
+        //ตัวอย่างการนำ ROW เเละ Column ไปใช้
+        //กำหนด ROW ขึ้นมา
+        body: Row(
+          //ภายใต้ ROW มี Logo กับ Column
           children: <Widget>[
-            FlutterLogo(),
-            Text(
-              "Codemobiles",
-              style: TextStyle(fontSize: 30),
+            FlutterLogo(
+              //กำหนดขนาด Logo 
+              size: 50,
             ),
-            Text("CM Devs", style: TextStyle(fontSize: 20))
+            //Container ใส่เพื่อจัดตำเเหน่ง ของ Column ที่อยู่ภายใต้ Row
+            Container(
+              //กำหนดให้ตัวอักษรใน Column ห่างจากขอบทางซ้ายมือ 4
+              margin: EdgeInsets.only(left: 4),
+              child: Column(
+                //ตัวอักษรจะชิดซ้ายมือของ Column
+                crossAxisAlignment: CrossAxisAlignment.start,
+                //กำหนดให้ตัวอักษรใช้ขนาดพื้นที่ให้น้อยที่สุด ส่งผลให้ Logo ใช้พื้นที่น้อยลงด้วย
+                mainAxisSize: MainAxisSize.min,
+                //ภายใต้ Column มี Text
+                children: <Widget>[
+                  Text(
+                    "Natdanai",
+                    //กำหนดขนาดัวอักษร (fontSize) เเละ (fontWeight)ความหนา
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "Developer",
+                    style: TextStyle(fontSize: 15),
+                  )
+                ],
+
+              ),
+            ),
           ],
         ),
       ),
