@@ -13,15 +13,37 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("CM Layout"),
         ),
-      //สร้าง ROW ขึ้นมา 1 Row
-      body: Row(
-        //กำหนดให้ข้อมูล ที่อยู่ใน ROW ทั้งหมดอยู่ตรงกลาง
-        mainAxisAlignment: MainAxisAlignment.center,
-        //ภายใต้ ROW จะมี ข้อมูล Logo , Codemobiles , CM Devs
-        children: <Widget>[FlutterLogo(), Text("Codemobiles"), Text("CM Devs")],
-      ),
-      ),
+        //สร้าง ROW ขึ้นมา 1 Row
+        body: Row(
+          //กำหนดให้ข้อมูล ที่อยู่ใน ROW ทั้งหมดอยู่ตรงกลาง
+          //MainAxisAlignment
+          // (.center) อยู่ตรงกลางจอในเเนวเเกน x ,
+          // (.spaceEvenly) อยู่ตรงกลางจอในเเนวเเกน x ถ้ามีมากว่า 1 คำให้มีพื้ที่ระหว่างคำ
+          // (.spaceAround) อยู่ตรงกลางจอในเเนวเเกน x ถ้ามีมากว่า 1 คำให้มีพื้ที่ระหว่างคำ โดยเเบ่งพื้นที่ว่างเท่าๆกัน
+          // (.spaceBetween) ให้คำชิดจอ
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // CrossAxisAlignment
+          // (.start) อยู่ชิดด้านบนในเเนวเเกน y
+          // (.end) อยู่ชิดจอด้านล่างในเเนวเเกน y
+          // (.baseline) ให้ตัวหนังสือที่อยู่ row เดียวกัน ตัวอักษรให้ชิบขอบเหมือนกัน กรณีที่มีตัวหนังสือกขนาดไม่เท่ากัน มี properties เพิ่มเติม textBaseline
+          crossAxisAlignment: CrossAxisAlignment.baseline,
+          // (.alphabetic) ด้านล่างตัวหนังสือจะชิดขอบล่างเหมือนกัน กรณีที่มีตัวหนังสือกขนาดไม่เท่ากัน
+          textBaseline: TextBaseline.alphabetic,
+          // TextDirection
+          // (.rtl) เรียงคำจากซ้ายไปขวา
+          textDirection: TextDirection.rtl,
+          //ภายใต้ ROW จะมี ข้อมูล Logo , Codemobiles , CM Devs
+          children: <Widget>[
+            FlutterLogo(),
+            Text(
+              "Codemobiles",
+              style: TextStyle(fontSize: 30),
+            ),
+            Text("CM Devs", style: TextStyle(fontSize: 20))
+          ],
+        ),
 
+      ),
     );
   }
 }
