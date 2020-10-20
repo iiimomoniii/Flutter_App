@@ -97,7 +97,53 @@ Column _buildButtonColumn({IconData icon, String label}) {
   );
 }
 
+//เเสดงส่วนของ list view ในเเนวนอน
 Widget courseSection = Container(
-  height: 250,
-  color: Colors.yellow,
+  //กำหนดให้ list view ห่างจากข้อมูลด้านบน
+  margin: EdgeInsets.only(top: 70),
+  //เว้นระยะระหว่าง card
+  padding: EdgeInsets.all(8),
+  child: Column(
+    //ให้รูปกับข้อความมาเริ่มต้นที่ทางซ้าย ในเเนวเเกน x
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      //ระยะระหว่าง Text
+      Padding(
+        padding: EdgeInsets.all(8),
+        child: Text("Mobiles & Web Course"),
+      ),
+
+      Container(
+          //ต้องมีการกำหนดความสูงของ Card ที่จะเเสดงรูป
+          height: 120,
+          child: ListView(
+            //กำหนดให้อยู่ในเเนวนอน
+            scrollDirection: Axis.horizontal,
+
+            //สร้าง Card ขึ้นมาจาก Function _buildCardListViewColumn
+            children: <Widget>[
+              _buildCardListViewColumn(
+                  url:
+                      "https://freedesignfile.com/upload/2018/05/Cartoon-kids-with-back-to-school-background-vector-04.jpg"),
+              _buildCardListViewColumn(
+                  url:
+                      "https://freedesignfile.com/upload/2018/05/Cartoon-kids-with-back-to-school-background-vector-04.jpg"),
+              _buildCardListViewColumn(
+                  url:
+                      "https://freedesignfile.com/upload/2018/05/Cartoon-kids-with-back-to-school-background-vector-04.jpg"),
+              _buildCardListViewColumn(
+                  url:
+                      "https://freedesignfile.com/upload/2018/05/Cartoon-kids-with-back-to-school-background-vector-04.jpg")
+            ],
+          ))
+      //ListView.Builder (ใช้สำหรับ รูปเยอะ)
+    ],
+  ),
 );
+
+//Function สำหรับ สร้าง Card
+Card _buildCardListViewColumn({String url}) {
+  return Card(
+    child: Image.network(url),
+  );
+}
