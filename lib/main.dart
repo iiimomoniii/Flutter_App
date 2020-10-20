@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+//เพิ่ม package ในการเเสดงรูปภาพ
+import 'package:transparent_image/transparent_image.dart';
 void main() {
   runApp(MyApp());
 }
@@ -144,6 +145,7 @@ Widget courseSection = Container(
 //Function สำหรับ สร้าง Card
 Card _buildCardListViewColumn({String url}) {
   return Card(
-    child: Image.network(url),
+    //ตอนโหลดรูปให้เเสดงรูปที่เป็รค่า default
+    child: FadeInImage.memoryNetwork(placeholder: kTransparentImage, image: url),
   );
 }
